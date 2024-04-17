@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0j7om1hniqoj"]
+
+[ext_resource type="PackedScene" uid="uid://crbaf0u4jjfgr" path="res://trace_object.tscn" id="1_t6csj"]
+[ext_resource type="Texture2D" uid="uid://cnldpi4p27lr2" path="res://IMG/torpedo_s.png" id="2_piuoj"]
+[ext_resource type="Script" path="res://torpedo.gd" id="3_0jcfx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vsvbo"]
+radius = 3.0
+
+[node name="Torpedo" instance=ExtResource("1_t6csj")]
+scale = Vector2(0.4, 1)
+texture = ExtResource("2_piuoj")
+script = ExtResource("3_0jcfx")
+course = 90.0
+life_time = 600.0
+trace_color = Color(0.901961, 0, 0.0980392, 1)
+
+[node name="ZigzagTimer" type="Timer" parent="." index="1"]
+unique_name_in_owner = true
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+texture_filter = 1
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(3, 0)
+scale = Vector2(1, 0.4)
+shape = SubResource("CircleShape2D_vsvbo")
+
+[connection signal="timeout" from="ZigzagTimer" to="." method="_on_zigzag_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

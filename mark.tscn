@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bptdhydj40umv"]
+
+[ext_resource type="Texture2D" uid="uid://dxd8sku0gkqcq" path="res://IMG/pixel.png" id="1_xsa2s"]
+
+[node name="mark" type="Sprite2D"]
+modulate = Color(0.843137, 0.00784314, 0, 1)
+texture_filter = 1
+rotation = 0.785398
+scale = Vector2(15, 15)
+texture = ExtResource("1_xsa2s")

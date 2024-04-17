@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://crbaf0u4jjfgr"]
+
+[ext_resource type="Texture2D" uid="uid://b3j6kubcyc86k" path="res://icon.svg" id="1_didgs"]
+[ext_resource type="Script" path="res://trace_object.gd" id="2_qdnnj"]
+
+[node name="TraceObject" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_didgs")
+script = ExtResource("2_qdnnj")
+course = 45.0
+life_time = 1800.0
+
+[node name="TraceTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="TraceTimer" to="." method="_on_trace_timer_timeout"]

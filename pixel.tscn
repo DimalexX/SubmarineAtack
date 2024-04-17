@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dapkvsyiwufeb"]
+
+[ext_resource type="Texture2D" uid="uid://dxd8sku0gkqcq" path="res://IMG/pixel.png" id="1_x2axp"]
+
+[node name="Pixel" type="Sprite2D"]
+modulate = Color(1, 1, 1, 0.705882)
+z_index = -1
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("1_x2axp")

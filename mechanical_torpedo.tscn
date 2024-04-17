@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://65ix251q4kth"]
+
+[ext_resource type="PackedScene" uid="uid://crbaf0u4jjfgr" path="res://trace_object.tscn" id="1_uubs6"]
+[ext_resource type="Texture2D" uid="uid://cnldpi4p27lr2" path="res://IMG/torpedo_s.png" id="2_pwinf"]
+[ext_resource type="Script" path="res://mechanical_torpedo.gd" id="3_uq1cv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lv7k0"]
+radius = 3.0
+
+[node name="MechanicalTorpedo" instance=ExtResource("1_uubs6")]
+texture = ExtResource("2_pwinf")
+script = ExtResource("3_uq1cv")
+course = 90.0
+trace_color = Color(0.870588, 0, 0.0431373, 1)
+
+[node name="TurnTimer" type="Timer" parent="." index="1"]
+one_shot = true
+
+[node name="StraightTimer" type="Timer" parent="." index="2"]
+one_shot = true
+
+[node name="ZigzagTimer" type="Timer" parent="." index="3"]
+
+[node name="Area2D" type="Area2D" parent="." index="4"]
+texture_filter = 1
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(3, 0)
+scale = Vector2(1, 0.4)
+shape = SubResource("CircleShape2D_lv7k0")
+
+[connection signal="timeout" from="TurnTimer" to="." method="_on_turn_timer_timeout"]
+[connection signal="timeout" from="StraightTimer" to="." method="_on_straight_timer_timeout"]
+[connection signal="timeout" from="ZigzagTimer" to="." method="_on_zigzag_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -1,0 +1,241 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnfa3sty3nqta"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_0pluh"]
+[ext_resource type="AudioStream" uid="uid://csr457lrbihls" path="res://SOUND/Original Soundtrack — Das Boot (www.lightaudio.ru).mp3" id="2_qejph"]
+
+[sub_resource type="Theme" id="Theme_5flob"]
+default_font_size = 12
+OptionButton/font_sizes/font_size = 12
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_0pluh")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 3)
+zoom = Vector2(0.2, 0.2)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Submarine course (deg):"
+
+[node name="Label6" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Torpedo type:"
+
+[node name="Label11" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Torpedo speed (15-25 m/s):"
+
+[node name="Label7" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Torpedo rotation (1-5 deg/s):"
+
+[node name="Label9" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 12
+text = "Torpedo life time (s):"
+
+[node name="Label2" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 12
+text = "Target course (deg):"
+
+[node name="Label3" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 12
+text = "Target speed (0-15 m/s):"
+
+[node name="Label4" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 12
+text = "Target distance (300-10000 m):"
+
+[node name="Label5" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 12
+text = "Target bearing (deg):"
+
+[node name="Label10" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 12
+text = "Target random (0-20):"
+
+[node name="Label8" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 12
+text = "Time scale (1-10):"
+
+[node name="Label12" type="Label" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 12
+text = "Music:"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="SubmarineCourse" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "270"
+
+[node name="TorpedoType" type="OptionButton" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_5flob")
+item_count = 2
+selected = 0
+popup/item_0/text = "Analog"
+popup/item_0/id = 0
+popup/item_1/text = "Digital"
+popup/item_1/id = 1
+
+[node name="TorpedoSpeed" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "20"
+
+[node name="TorpedoRotation" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "1"
+
+[node name="TorpedoLifeTime" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "600"
+
+[node name="TargetCourse" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "0"
+placeholder_text = "0"
+
+[node name="TargetSpeed" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "6"
+
+[node name="TargetDistance" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "2000"
+
+[node name="TargetBearing" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "250"
+
+[node name="TargetRandom" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "0"
+
+[node name="TimeScale" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "5"
+
+[node name="CheckButton" type="CheckButton" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+button_pressed = true
+
+[node name="Button" type="Button" parent="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Launch"
+
+[node name="Panel" type="Panel" parent="UI/MarginContainer/VBoxContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Warning" type="Label" parent="UI/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+text = "Target out of range!"
+horizontal_alignment = 1
+
+[node name="WarningTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qejph")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="toggled" from="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="UI/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="timeout" from="WarningTimer" to="." method="_on_warning_timer_timeout"]

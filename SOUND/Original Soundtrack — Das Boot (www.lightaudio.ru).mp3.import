@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csr457lrbihls"
+path="res://.godot/imported/Original Soundtrack — Das Boot (www.lightaudio.ru).mp3-a5010b752587505de9b5be6fde7f0a39.mp3str"
+
+[deps]
+
+source_file="res://SOUND/Original Soundtrack — Das Boot (www.lightaudio.ru).mp3"
+dest_files=["res://.godot/imported/Original Soundtrack — Das Boot (www.lightaudio.ru).mp3-a5010b752587505de9b5be6fde7f0a39.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
