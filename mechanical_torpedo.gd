@@ -84,7 +84,6 @@ func move(delta: float):
 
 
 func find_intercept_point(_target_velocity: Vector2, _target_position: Vector2, _position: Vector2) -> Vector2:
-	#printt(_position, _target_position, _target_velocity)
 	var target_vel_x := _target_velocity.x; var target_vel_y := _target_velocity.y
 	var target_pos_x := _target_position.x; var target_pos_y := _target_position.y
 	var turret_pos_x := _position.x; var turret_pos_y := _position.y

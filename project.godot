@@ -37,6 +37,10 @@ zoom_out={
 ]
 }
 
+[physics]
+
+common/physics_ticks_per_second=600
+
 [rendering]
 
 textures/decals/filter=0
