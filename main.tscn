@@ -141,10 +141,9 @@ text = "270"
 unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_5flob")
-item_count = 2
 selected = 0
+item_count = 2
 popup/item_0/text = "Analog"
-popup/item_0/id = 0
 popup/item_1/text = "Digital"
 popup/item_1/id = 1
 
